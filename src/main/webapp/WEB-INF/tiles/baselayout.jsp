@@ -16,11 +16,11 @@ String basePath = request.getScheme() + "://"
         <title><tiles:insertAttribute name="title" /></title>
         <tilesx:useAttribute name="stylesheets" classname="java.util.List" />
         <c:forEach items="${stylesheets}" var="src">
-           <link rel="stylesheet" type="text/css" href="<c:url value='${src}.css' />" />
+          <link rel="stylesheet" type="text/css" href="<%=basePath %><c:url value='${src}.css' />" />
         </c:forEach>
         <tilesx:useAttribute id="scripts" name="scripts" classname="java.util.List" />
         <c:forEach items="${scripts}" var="src">
-            <script type="text/javascript" src="<c:url value='${src}.js' />"></script>
+            <script type="text/javascript" src="<%=basePath %><c:url value='${src}.js' />"></script>
         </c:forEach>
     </head>
     <body>

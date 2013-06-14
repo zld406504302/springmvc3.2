@@ -5,7 +5,7 @@ String path = request.getContextPath();
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="static/style/main.css" />
+<link rel="stylesheet" type="text/css" href="<%= path%>/static/style/main.css" />
 </head>
 <body>
 <form action="<%=path%>/user/login/doLogin" method="post">

@@ -7,10 +7,10 @@
         <put-attribute name="title" value="title" />
         <put-attribute name="login_user" value="" />
         <put-list-attribute name="stylesheets">
-            <add-attribute value="../../static/style/main" />
+            <add-attribute value="static/style/main" />
         </put-list-attribute>
         <put-list-attribute name="scripts">
-            <add-attribute value="../../static/js/util" />
+            <add-attribute value="static/js/util" />
         </put-list-attribute>
     </definition>
     
@@ -30,7 +30,6 @@
     <definition name="home" extends="baselayout">
         <put-attribute name="main" value="WEB-INF/tiles/loginUser.jsp" />
         <put-list-attribute name="scripts" inherit="true">
-           <!--  <add-attribute value="assets/newish" /> -->
         </put-list-attribute>
     </definition>
  

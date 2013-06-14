@@ -1,0 +1,37 @@
+body{font-size: 12px ; font-family: ¿¬Ìå;padding: 0px;width:1024px;min-height: 800px;}
+.text_algin_right{text-align: right;}
+.span_width_60{ display:-moz-inline-box; display:inline-block; width:60px;height:20px;padding: 0px;margin:0px; }
+.span_width_20{ display:-moz-inline-box; display:inline-block; width:20px;height:20px;padding: 0px;margin:0px; }
+.login_user{text-align: right;}
+
+ul li
+{ 
+   list-style: none;
+   margin-left: 15px;
+   margin-bottom: 10px;
+}
+#menu
+{
+  clear:both;
+  margin-bottom:5px;
+  height:20px;
+  background-color: gray;
+}
+
+#menu ul{
+	list-style:none;
+	height:auto;
+	margin:0;p
+	adding:0;
+	background-color:#436973;
+}
+
+#menu li
+{
+    float:left;
+	width:40px;
+	height:20px;
+}
+
+#footer{background-color: gray;width: 100%;}
+.clear_float{clear: both;}

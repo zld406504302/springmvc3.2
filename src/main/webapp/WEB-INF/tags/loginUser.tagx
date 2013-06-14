@@ -1,0 +1,14 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page"
+ xmlns:custom="urn:jsptagdir:/WEB-INF/tags">
+<custom:mainLayout title="${title}/">
+ <custom:simpleTable collection="${users}" headerLabels="First Name, Last Name">
+   <c:forEach var="user" items="${users}">
+     <tr>
+       <td> <c:out value="${user.name}"/> </td>
+       <td> <c:out value="${user.sex}"/> </td>
+       <td> <c:out value="${user.age}"/> </td>
+     </tr>
+   </c:forEach>
+  </custom:simpleTable>
+</custom:mainLayout>
+</div>

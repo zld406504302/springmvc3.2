@@ -1,0 +1,12 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"  
+xmlns:spring="http://www.springframework.org/tags" 
+xmlns:jsp="http://java.sun.com/JSP/Page">
+<jsp:directive.attribute name="title" required="true" rtexprvalue="true" />
+<body>
+<div style="padding-top: 50px;">
+		<jsp:include page="/WEB-INF/jsp/title/menu.jspx" />
+		<jsp:doBody />
+		<jsp:include page="/WEB-INF/jsp/title/footer.jspx" />
+	</div>
+</body>
+</div>

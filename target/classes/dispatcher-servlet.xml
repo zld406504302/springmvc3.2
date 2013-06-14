@@ -48,7 +48,7 @@
 			</props>
 		</property>
 	</bean>
-		
+			
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" p:order="1"/>
     
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

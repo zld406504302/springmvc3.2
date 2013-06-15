@@ -19,23 +19,24 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 	
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
-		<!--
+	<!-- <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"> 
+		<property name="alwaysUseFullPath" value="true" />
 		<property name="interceptors">
-      		<bean class="com.psasp.framework.web.PagingObjectPrepareInterceptor"/>
-    	</property>
-    	-->
-    	<!--控制器中所有的映射路径配置的都是全路径名，所以这里要设置为全路径，否则无法正确找到控制器方法-->
-		<property name="alwaysUseFullPath" value="true" />
+		    <list>
+		       <ref bean="requestMappingHandlerMappingInterceptor" />
+		    </list>
+		</property>
 	</bean>
-    <bean class="com.cn.ld.framework.web.ControllerMappingAwareAnnotationMethodHandlerAdapter">
-	<!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">-->
-		<!-- 控制器中所有的映射路径配置的都是全路径名，所以这里要设置为全路径，否则无法正确找到控制器方法 -->
-		<property name="alwaysUseFullPath" value="true" />
+     <!--<bean class="com.cn.ld.framework.web.ControllerMappingAwareAnnotationMethodHandlerAdapter">-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
 			<ref bean="mappingJacksonHttpMessageConverter" />
 		</property>
 	</bean>
+	
+	<bean id="requestMappingHandlerMappingInterceptor" class="com.cn.ld.framework.web.RequestMappingHandlerMappingInterceptor"/>
+	
 	<bean id="mappingJacksonHttpMessageConverter"
 		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 	

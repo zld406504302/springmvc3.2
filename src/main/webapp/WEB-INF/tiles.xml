@@ -28,7 +28,7 @@
     </definition>
     
     <definition name="home" extends="baselayout">
-        <put-attribute name="main" value="WEB-INF/tiles/loginUser.jsp" />
+        <put-attribute name="main" value="/WEB-INF/tiles/loginUser.jsp" />
         <put-list-attribute name="scripts" inherit="true">
         </put-list-attribute>
     </definition>

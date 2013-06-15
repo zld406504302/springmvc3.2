@@ -22,9 +22,9 @@
         <put-attribute name="title" value="springmvc3.2" />
     </definition>
     
-    <definition name="user/login/home" extends="baselayout">
+    <definition name="user/home" extends="baselayout">
         <put-attribute name="title" value="home page" />
-        <put-attribute name="main" value="/WEB-INF/jsp/user/login/home.jsp" />
+        <put-attribute name="main" value="/WEB-INF/jsp/user/home.jsp" />
     </definition>
     
     <definition name="home" extends="baselayout">

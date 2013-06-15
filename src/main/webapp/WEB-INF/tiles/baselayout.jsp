@@ -13,7 +13,10 @@ String basePath = request.getScheme() + "://"
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- tile -->
         <title><tiles:insertAttribute name="title" /></title>
+        <!-- stylesheets 要和tiles <put-list-attribute name="stylesheets"> name 一致 -->
+        <!-- classname 定义类型 -->
         <tilesx:useAttribute name="stylesheets" classname="java.util.List" />
         <c:forEach items="${stylesheets}" var="src">
           <link rel="stylesheet" type="text/css" href="<%=basePath %><c:url value='${src}.css' />" />
@@ -28,6 +31,7 @@ String basePath = request.getScheme() + "://"
         <div id="banner"></div>
         <div id="menu"><jsp:include page="/WEB-INF/tiles/menu.jsp"/></div>	
         </div>
+        <!-- 加载 tiles main 指向的页面<put-attribute name="main" value="/WEB-INF/jsp/user/login/home.jsp" /> -->
         <div id="main"><tiles:insertAttribute name="main" /></div>
         <div id="footer"><jsp:include page="/WEB-INF/tiles/footer.jsp"/></div>
     </body>

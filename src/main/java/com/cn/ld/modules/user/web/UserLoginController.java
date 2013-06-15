@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cn.ld.modules.user.domain.User;
 
 @Controller
-@RequestMapping("/user/login")
+@RequestMapping("/user")
 public class UserLoginController {
 	@RequestMapping("doLogin")
 	public String query(Model model,User user) {

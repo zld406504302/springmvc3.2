@@ -8,7 +8,7 @@ String path = request.getContextPath();
 <link rel="stylesheet" type="text/css" href="<%= path%>/static/style/main.css" />
 </head>
 <body>
-<form action="<%=path%>/user/login/doLogin" method="post">
+<form action="<%=path%>/user/doLogin" method="post">
 <div><span class="span_width_60 text_algin_right">username:</span><span><input name="name"/></span></div>
 <div><span class="span_width_60 text_algin_right">password:</span><span><input type="password" name="password"/></span></div>
 <div><span class="span_width_60 text_algin_right">sex:</span><span><input type="radio" name="sex" value="男" checked="checked"/><input type="radio" name="sex" value="女"/></span></div>

@@ -103,8 +103,8 @@
 		<artifactId>jackson-mapper-lgpl</artifactId>
 		<version>1.9.12</version>
 	</dependency>
+
     <!--  db mysql jdbc tx-->
-    
     <dependency>
     	<groupId>mysql</groupId>
     	<artifactId>mysql-connector-java</artifactId>

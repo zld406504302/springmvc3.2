@@ -19,11 +19,16 @@
     </head>
     <body>
         <div id="head">
-        <div id="banner"></div>
-        <div id="login_user"><tiles:insertAttribute name="login_user" /></div>	
-        <div id="menu"><jsp:include page="/WEB-INF/tiles/menu.jsp"/></div>
+	        <div id="banner"></div>
+	        <div id="login_user"><tiles:insertAttribute name="login_user" /></div>	
+	        <div id="topmenu"><jsp:include page="/WEB-INF/tiles/topmenu.jsp"/></div>
+        </div> 
+ 		<div class="clear_float"></div>
+        <div id="main">
+	        <div id="leftmenu"><tiles:insertAttribute name="left_menu" /></div>
+	        <div id="content"><tiles:insertAttribute name="main" /></div>
+	        <div class="clear_float"></div>
         </div>
-        <div id="main"><tiles:insertAttribute name="main" /></div>
         <div id="footer"><jsp:include page="/WEB-INF/tiles/footer.jsp"/></div>
     </body>
 </html>

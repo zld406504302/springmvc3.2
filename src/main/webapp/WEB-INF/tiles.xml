@@ -6,7 +6,6 @@
 
     <definition name="baselayout" template="/WEB-INF/tiles/baselayout.jsp" preparer="com.cn.ld.framework.web.tiles.CustomerPreparer">
         <put-attribute name="title" value="title" />
-        <put-attribute name="login_user" value="" />
         <put-list-attribute name="stylesheets">
             <add-attribute value="static/style/main" />
         </put-list-attribute>
@@ -15,11 +14,13 @@
             <add-attribute value="static/js/jquery/jquery-1.9.1" />
             <add-attribute value="static/js/jquery/validate/jquery.validate" />
             <add-attribute value="static/js/jquery/validate/messages_cn.js" />
+            <add-attribute value="static/js/leftmenu" />
         </put-list-attribute>
     </definition>
     
     <definition name="sublayout" extends="baselayout">
-        <put-attribute name="login_user" value="/WEB-INF/tiles/loginUser.jsp" />
+        <put-attribute name="login_user" value="/WEB-INF/tiles/loginuser.jsp" />
+        <put-attribute name="left_menu" value="/WEB-INF/tiles/leftmenu.jsp" />
     </definition>
     
     <definition name="title" template="/WEB-INF/tiles/title.jsp">
@@ -32,7 +33,7 @@
     </definition>
     
     <definition name="home" extends="baselayout">
-        <put-attribute name="main" value="/WEB-INF/tiles/loginUser.jsp" />
+        <put-attribute name="main" value="/WEB-INF/tiles/loginuser.jsp" />
         <put-list-attribute name="scripts" inherit="true">
         </put-list-attribute>
     </definition>

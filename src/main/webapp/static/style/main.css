@@ -1,8 +1,7 @@
 body{font-size: 12px ; font-family: 楷体;padding: 0px;width:1024px;min-height: 800px;}
 .text_algin_right{text-align: right;}
-.span_width_60{ display:-moz-inline-box; display:inline-block; width:60px;height:20px;padding: 0px;margin:0px; }
+.span_width_60{ display:-moz-inline-box; display:inline-block; width:70px;height:20px;padding: 0px;margin:0px; }
 .span_width_20{ display:-moz-inline-box; display:inline-block; width:20px;height:20px;padding: 0px;margin:0px; }
-.login_user{text-align: right;}
 
 ul li
 { 
@@ -10,6 +9,12 @@ ul li
    margin-left: 15px;
    margin-bottom: 10px;
 }
+
+/****** 用户信息 开始*********/
+#login_user{width:100%;margin: 0px;padding:0px;text-align: right;}
+/****** 用户信息 结束*********/
+
+/****** 头部菜单 开始*********/
 #menu
 {
   clear:both;
@@ -20,8 +25,8 @@ ul li
 
 #menu ul{
 	list-style:none;
-	height:auto;
-	margin:0;p
+	line-height:20px;
+	margin:0;
 	adding:0;
 	background-color:#436973;
 }
@@ -33,5 +38,10 @@ ul li
 	height:20px;
 }
 
-#footer{background-color: gray;width: 100%;}
+/****** 头部菜单 结束*********/
+
+/****** 底部样式 开始*********/
+#footer{background-color: gray;width: 100%;height:25px;text-align: center;}
+#footer span{line-height: 25px;}
+/****** 底部样式 结束*********/
 .clear_float{clear: both;}

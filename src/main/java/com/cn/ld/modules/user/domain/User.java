@@ -9,6 +9,15 @@ public class User extends BaseLongIdDomain {
 	private String password;
     private int age  ;
     private char sex ;
+    public User(){
+    	super();
+    }
+    public User(String name , String password , int age , char sex){
+    	this.name = name ;
+    	this.password = password ;
+    	this.age = age ;
+    	this.sex = sex ;
+    }
 	public String getName() {
 		return name;
 	}

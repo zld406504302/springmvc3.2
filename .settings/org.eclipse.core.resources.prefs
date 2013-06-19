@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/config/log4j.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/config/sysinfo.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/user/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/tiles.xml=UTF-8
 encoding//src/main/webapp/WEB-INF/tiles/footer.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/tiles/loginUser.jsp=UTF-8

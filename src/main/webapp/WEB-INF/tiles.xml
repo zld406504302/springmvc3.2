@@ -12,6 +12,9 @@
         </put-list-attribute>
         <put-list-attribute name="scripts">
             <add-attribute value="static/js/util" />
+            <add-attribute value="static/js/jquery/jquery-1.9.1" />
+            <add-attribute value="static/js/jquery/validate/jquery.validate" />
+            <add-attribute value="static/js/jquery/validate/messages_cn.js" />
         </put-list-attribute>
     </definition>
     
@@ -22,8 +25,8 @@
     <definition name="title" template="/WEB-INF/tiles/title.jsp">
         <put-attribute name="title" value="springmvc3.2" />
     </definition>
-    
-    <definition name="user/home" extends="baselayout">
+ 
+    <definition name="user/home" extends="sublayout">
         <put-attribute name="title" value="home page" />
         <put-attribute name="main" value="/WEB-INF/jsp/user/home.jsp" />
     </definition>

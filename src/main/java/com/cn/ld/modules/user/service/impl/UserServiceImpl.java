@@ -1,4 +1,4 @@
-package com.cn.ld.modules.user.service;
+package com.cn.ld.modules.user.service.impl;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 
 import com.cn.ld.modules.user.domain.User;
+import com.cn.ld.modules.user.service.UserService;
 
 @EnableCaching
 @Service

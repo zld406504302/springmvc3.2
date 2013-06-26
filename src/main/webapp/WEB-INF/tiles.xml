@@ -29,7 +29,7 @@
  
     <definition name="user/home" extends="sublayout">
         <put-attribute name="title" value="home page" />
-        <put-attribute name="main" value="/WEB-INF/jsp/user/home.jsp" />
+        <put-attribute name="main" value="/home.jsp" />
     </definition>
     
     <definition name="home" extends="baselayout">

@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/style/main.css" />
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/user/doLogin" method="post">
-<div><span class="span_width_60 text_algin_right">username:</span><span><input name="name"/></span></div>
-<div><span class="span_width_60 text_algin_right">password:</span><span><input type="password" name="password"/></span></div>
+<form action="${pageContext.request.contextPath}/j_spring_security_check" method="post">
+<div><span class="span_width_60 text_algin_right">username:</span><span><input name="j_username"/></span></div>
+<div><span class="span_width_60 text_algin_right">password:</span><span><input type="password" name="j_password"/></span></div>
 <div><span class="span_width_60 text_algin_right">sex:</span><span><input type="radio" name="sex" value="男" checked="checked"/><input type="radio" name="sex" value="女"/></span></div>
 <div><span class="span_width_60 text_algin_right">age:</span><span><input type="text" name="age" /></span></div>
 <div><span class="span_width_60 text_algin_right"><input type="submit" value='submit'/></span></div>

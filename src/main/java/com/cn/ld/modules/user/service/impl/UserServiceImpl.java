@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.cn.ld.modules.user.domain.User;
@@ -11,7 +14,7 @@ import com.cn.ld.modules.user.service.UserService;
 
 @EnableCaching
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService ,UserDetailsService{
 	private User[] users = null;
 	{
 		users = new User[5];
@@ -31,9 +34,10 @@ public class UserServiceImpl implements UserService {
 		return u;
 	}
 
-	/*public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
 	{
 		User user = new User(username, "111111", 25, '男');
 		return user ;
-	}*/
+	}
 }

@@ -16,9 +16,8 @@ public class UserLoginController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("doLogin")
-	public String querya(Model model, User user) {
-		model.addAttribute("user", user);
+	@RequestMapping("home")
+	public String goHome() {
 		return "home";
 	}
 

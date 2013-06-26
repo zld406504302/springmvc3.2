@@ -1,8 +1,12 @@
 package com.cn.ld.modules.user.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import com.cn.ld.base.domain.BaseLongIdDomain;
 
-public class User extends BaseLongIdDomain {
+public class User extends BaseLongIdDomain{
 
 	private static final long serialVersionUID = 1L;
 	private String name;
@@ -48,6 +52,31 @@ public class User extends BaseLongIdDomain {
 
 	public void setSex(char sex) {
 		this.sex = sex;
+	}
+	/*public Collection<? extends GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> re=new ArrayList<GrantedAuthority>();
+		re.add(new SimpleGrantedAuthority("ROLE_USER"));
+		return re;
+	}*/
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

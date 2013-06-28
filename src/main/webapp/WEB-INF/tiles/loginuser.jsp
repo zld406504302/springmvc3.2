@@ -1,1 +1,8 @@
-<h1>Hello, ${user.name} &nbsp;${user.age } &nbsp;${user.sex}</h1>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="com.cn.ld.modules.user.domain.LoginUserDetails" %>
+<%@ page import="com.cn.ld.modules.user.domain.User" %>
+<%
+  User user = LoginUserDetails.getLoginUser() ;
+%>
+<h1>Hello, <%=user.getName()%> &nbsp;<%=user.getAge()%> &nbsp;<%=user.getSex()%></h1>

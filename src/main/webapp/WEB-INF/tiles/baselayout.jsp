@@ -20,7 +20,8 @@
     <body>
         <div id="head">
 	        <div id="banner"></div>
-	        <div id="login_user"><tiles:insertAttribute name="login_user" /></div>	
+	        <div id="login_user"><tiles:insertAttribute name="login_user" /></div>
+	        <div class="clear_float"></div>	
 	        <div id="topmenu"><jsp:include page="/WEB-INF/tiles/topmenu.jsp"/></div>
         </div> 
  		<div class="clear_float"></div>

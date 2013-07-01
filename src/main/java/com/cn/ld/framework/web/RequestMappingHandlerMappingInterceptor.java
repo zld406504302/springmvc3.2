@@ -107,9 +107,10 @@ private static final String VIEW_NAME_PREFIX_REDIRECT="redirect:";
 				String[] mvs=mapping.value();
 				
 				re=mvs[0];
+				
+				this.controllerMappingCache.putIfAbsent(hc, re);
 			}
 			
-			this.controllerMappingCache.putIfAbsent(hc, re);
 		}
 		
 		return re;

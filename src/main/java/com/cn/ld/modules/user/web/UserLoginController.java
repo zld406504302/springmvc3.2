@@ -14,12 +14,6 @@ public class UserLoginController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("home")
-	public String goHome() {
-		
-		return "home";
-	}
-
 	@RequestMapping("findUserById")
 	@ResponseBody
 	public User findUserById(int id) {

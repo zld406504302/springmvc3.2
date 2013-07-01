@@ -11,8 +11,15 @@
 	<http pattern="/login.jsp*" security="none" />
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_USER" />
-		<form-login login-page="/login.jsp" default-target-url="/user/home" always-use-default-target="true" />
-		<logout logout-url="/logout" invalidate-session="true" success-handler-ref="myLogoutSuccessHandler"/>
+		<!-- authentication-success-handler-ref="customerAuthenticationSuccessHandler" -->
+		<form-login 
+			login-page="/login.jsp" 
+			default-target-url="/" 
+			always-use-default-target="true" 
+		/>
+		
+		<logout logout-url="/logout" invalidate-session="true" success-handler-ref="logoutSuccessHandler"/>
+		
 	</http>
 	
 	<authentication-manager>
@@ -24,9 +31,12 @@
 		<authentication-provider user-service-ref="userServiceImpl" />
 	</authentication-manager>
 
- 	<beans:bean id="myLogoutSuccessHandler"
+ 	<beans:bean id="logoutSuccessHandler"
                 class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
         <beans:property name="defaultTargetUrl" value="/"/>
         <beans:property name="alwaysUseDefaultTargetUrl" value="true"/>
     </beans:bean>
+    
+    <beans:bean id="customerAuthenticationSuccessHandler" class="com.cn.ld.modules.security.handler.CustomerAuthenticationSuccessHandler"/>
+    
 </beans:beans>

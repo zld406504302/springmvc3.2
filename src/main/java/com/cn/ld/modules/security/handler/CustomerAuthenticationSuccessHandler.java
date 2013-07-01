@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
@@ -16,13 +17,15 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
  * @date 2013-7-1 上午11:04:17      
  */
 public class CustomerAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
-
+	protected final Logger logger = Logger.getLogger(this.getClass());
+	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response, Authentication auth) throws IOException,
 			ServletException {
-		
-		System.out.println("----------------校验成功handler ---------------------");
+		logger.debug(">>>>>>>Acegi Security successHandler start<<<<<< ");
+		response.sendRedirect("main");
+		logger.debug(">>>>>>>Acegi Security successHandler end<<<<<< ");
 	}
-
+	
 }

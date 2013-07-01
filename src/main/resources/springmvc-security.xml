@@ -11,12 +11,12 @@
 	<http pattern="/login.jsp*" security="none" />
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_USER" />
-		<!-- authentication-success-handler-ref="customerAuthenticationSuccessHandler" -->
 		<form-login 
 			login-page="/login.jsp" 
-			default-target-url="/" 
+		    authentication-success-handler-ref="customerAuthenticationSuccessHandler"
 			always-use-default-target="true" 
 		/>
+			<!-- default-target-url="/"  -->
 		
 		<logout logout-url="/logout" invalidate-session="true" success-handler-ref="logoutSuccessHandler"/>
 		

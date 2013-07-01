@@ -22,10 +22,17 @@
 		<param-value>classpath:applicationContext.xml,classpath:springmvc-security.xml</param-value>
 	</context-param>
 	
+ 	<!-- 60秒钟检测一次配置文件 -->  
+	<context-param>  
+	    <param-name>log4jRefreshInterval</param-name>  
+	    <param-value>60000</param-value>  
+	</context-param>
+	
     <!-- Spring的log4j监听器 -->  
     <listener>  
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>  
     </listener>  
+      
     
     <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

@@ -18,14 +18,14 @@ public class UserServiceImpl implements UserService ,UserDetailsService{
 	private User[] users = null;
 	{
 		users = new User[5];
-		users[0] = new User("java小生0", "111111", 24, '男');
-		users[1] = new User("java小生1", "222222", 24, '男');
-		users[2] = new User("java小生2", "333333", 24, '男');
+		users[0] = new User("java小生0", "111111", 21, '男');
+		users[1] = new User("java小生1", "222222", 22, '男');
+		users[2] = new User("java小生2", "333333", 23, '男');
 		users[3] = new User("java小生3", "444444", 24, '男');
-		users[4] = new User("java小生4", "555555", 24, '女');
+		users[4] = new User("java小生4", "555555", 25, '女');
 	}
 
-	@Cacheable(value = "user" , condition="#id < 3" ,unless="#result.name == 'java小生4'")
+	@Cacheable(value = "user" , condition="#id < 3" ,unless="#result.age == 25")
 	public User findById(int id) {
 		System.out.println("--------findById start-----------");
 		System.out.println("agrs{id:"+id+"}");

@@ -22,22 +22,11 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
-	<bean id="psaspSysInfoPropertyConfigurer"
-    		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     	 <property name="location">
                 <value>/WEB-INF/config/sysinfo.properties</value>
           </property>
     	<property name="ignoreUnresolvablePlaceholders" value="true"></property>
-    </bean>
-    
-    <bean id="psucpSysInfo" class="java.util.HashMap">
-    	<constructor-arg>
-			<map>
-				<entry key="application.name" value="${application.name}" />
-				<entry key="application.version" value="${application.version}" />
-				<entry key="application.buildDate" value="${application.buildDate}" />
-			</map>
-		</constructor-arg>
     </bean>
     
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

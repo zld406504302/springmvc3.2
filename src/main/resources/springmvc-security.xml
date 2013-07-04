@@ -15,6 +15,7 @@
 			login-page="/login.jsp" 
 		    authentication-success-handler-ref="customerAuthenticationSuccessHandler"
 			always-use-default-target="true" 
+			
 		/>
 			<!-- default-target-url="/"  -->
 		
@@ -28,8 +29,22 @@
 				<user name="java小生" password="111111" authorities="ROLE_USER, ROLE_ADMIN"/>
 			</user-service>
 		</authentication-provider>
-		<authentication-provider user-service-ref="userServiceImpl" />
+	    <authentication-provider user-service-ref="userServiceImpl" />
 	</authentication-manager>
+
+	<beans:bean id="authenticationManager"
+		class="org.springframework.security.authentication.ProviderManager">
+		<beans:property name="providers">
+			<beans:list>
+				<beans:ref local="daoAuthenticationProvider" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="daoAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="userServiceImpl" />
+	</beans:bean>
 
  	<beans:bean id="logoutSuccessHandler"
                 class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">

@@ -15,7 +15,6 @@
 			login-page="/login.jsp" 
 		    authentication-success-handler-ref="customerAuthenticationSuccessHandler"
 			always-use-default-target="true" 
-			
 		/>
 			<!-- default-target-url="/"  -->
 		

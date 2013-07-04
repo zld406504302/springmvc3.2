@@ -20,7 +20,8 @@ public class User extends BaseLongIdDomain implements UserDetails{
     public User(){
     	super();
     }
-    public User(String name , String password , int age , char sex){
+    public User(long id ,String name , String password , int age , char sex){
+    	super.setId(id);
     	this.name = name ;
     	this.password = password ;
     	this.age = age ;

@@ -30,7 +30,7 @@
     
     <definition name="main" extends="sublayout">
         <put-attribute name="title" value="home page" />
-        <put-attribute name="main" value="/main.jsp" />
+        <put-attribute name="content" value="/index.jsp" />
     </definition>
  
 </tiles-definitions>

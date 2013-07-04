@@ -27,7 +27,7 @@
  		<div class="clear_float"></div>
         <div id="main">
 	        <div id="leftmenu"><tiles:insertAttribute name="left_menu" /></div>
-	        <div id="content"><tiles:insertAttribute name="main" /></div>
+	        <div id="content"><tiles:insertAttribute name="content" /></div>
 	        <div class="clear_float"></div>
         </div>
         <div id="footer"><jsp:include page="/WEB-INF/tiles/footer.jsp"/></div>

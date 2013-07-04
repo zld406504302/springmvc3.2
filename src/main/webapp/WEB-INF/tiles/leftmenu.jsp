@@ -1,7 +1,27 @@
-<ul>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<script type="text/javascript">
+$(function(){
+	$("div#link_container ul").each(function(){
+		var menuType = $(this).attr("contextmenu");
+		$(this).find("li").each(function(index ,el){
+			var $menuLi = $(this);
+			$("ul#left_menu_ul li").eq(menuType).find("div[isTitle='false']").eq(index).click(function(){
+				$("div#content").load("${pageContext.request.contextPath}/user/goSerchUser",null,function(){
+				});
+			});
+		});
+		
+	});
+});
+</script>
+<div id="link_container" style="display: none;">
+<jsp:include page="leftmenu_link.jsp"/>
+</div>
+<ul id="left_menu_ul">
 <li>
 <div class="show" isTitle="true"><span>spring annotation1</span></div>
-<div class="hide margin_left_20" isTitle="false"><span>spring annotation1.1</span></div>
+<div class="hide margin_left_20" isTitle="false"><span>spring cache-annotation</span></div>
 <div class="hide margin_left_20" isTitle="false"><span>spring annotation1.2</span></div>
 </li>
 <li>

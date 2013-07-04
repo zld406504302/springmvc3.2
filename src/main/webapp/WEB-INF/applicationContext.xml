@@ -99,7 +99,7 @@
 
 	<bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
 
-     p:configLocation="classpath:ehcache.xml"
+     p:configLocation="/WEB-INF/ehcache.xml"
 
      p:shared="false" />
 

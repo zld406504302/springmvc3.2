@@ -60,6 +60,9 @@
         </property>
     </bean>
     
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="Messages" />
+	</bean>
     
     <bean id="templateResolver"
 		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
@@ -68,18 +71,18 @@
 		<property name="templateMode" value="HTML5" />
 		<property name="cacheable" value="true" />
 	</bean>
-	
-	<bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
-		<property name="templateEngine" ref="templateEngine" />
-		<property name="order" value="1" />
-		<property name="viewNames" value="thymeleaf/*" />
-	</bean>
     
     <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
 		<property name="templateResolver" ref="templateResolver" />
 	</bean>
+	
+	<bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+		<property name="templateEngine" ref="templateEngine" />
+		<property name="order" value="2" />
+		<property name="viewNames" value="thymeleaf/*" />
+	</bean>
     
-    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/jsp/"
-			p:suffix=".jsp" p:order="2"/>
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/views/jsp/"
+			p:suffix=".jsp" p:order="1"/>
 			
 </beans>

@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService ,UserDetailsService{
 	}
 
 	@Override
-	public List<User> userList() {
+	public List<User> getUserList() {
 		return this.userRepository.getUserList();
 	}
 

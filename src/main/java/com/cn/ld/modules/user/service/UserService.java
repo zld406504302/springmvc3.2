@@ -12,7 +12,7 @@ public interface UserService {
 	
 	public void addUser(User user) ;
 	
-	public List<User> userList();
+	public List<User> getUserList();
 	
 	public void removeUser(User u);
 }

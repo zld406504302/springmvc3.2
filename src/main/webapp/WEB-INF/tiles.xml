@@ -12,8 +12,10 @@
         <put-list-attribute name="scripts">
             <add-attribute value="static/js/util" />
             <add-attribute value="static/js/jquery/jquery-1.9.1" />
+            <add-attribute value="static/js/json/json2"/>
+            <add-attribute value="static/js/json/json_parse"/>
             <add-attribute value="static/js/jquery/validate/jquery.validate" />
-            <add-attribute value="static/js/jquery/validate/messages_cn.js" />
+            <add-attribute value="static/js/jquery/validate/messages_cn" />
             <add-attribute value="static/js/leftmenu" />
         </put-list-attribute>
     </definition>

@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script type="text/javascript">
+
 $(function(){
+	$.ajaxSetup({
+	    'beforeSend' : function(xhr) {
+	        xhr.overrideMimeType('text/plain; charset=utf-8');
+	    }
+	});
+	
 	$("div#link_container ul").each(function(){
 		var menuType = $(this).attr("contextmenu");
 		$(this).find("li").each(function(index ,el){
 			var $menuLi = $(this);
 			$("ul#left_menu_ul li").eq(menuType).find("div[isTitle='false']").eq(index).click(function(){
-				$("div#content").load("${pageContext.request.contextPath}/user/goSerchUser",null,function(){
+				var url = "${pageContext.request.contextPath}"+$menuLi.html() ;
+				$("div#content").load(url,function(data){
+					$(this).html(decodeURI(data));
 				});
 			});
 		});
@@ -22,7 +31,7 @@ $(function(){
 <li>
 <div class="show" isTitle="true"><span>spring annotation1</span></div>
 <div class="hide margin_left_20" isTitle="false"><span>spring cache-annotation</span></div>
-<div class="hide margin_left_20" isTitle="false"><span>spring annotation1.2</span></div>
+<div class="hide margin_left_20" isTitle="false"><span>spring thymeleafe</span></div>
 </li>
 <li>
 <div class="show" isTitle="true"><span>spring annotation2</span></div>

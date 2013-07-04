@@ -1,8 +1,8 @@
 
 <div>
 <ul contextmenu="0" >
-<li>/user/goSerchUser</li>
-<li></li>
+<li>/user/userList</li>
+<li>/thymeleafe/userList</li>
 </ul>
 <ul contextmenu="1" >
 <li></li>

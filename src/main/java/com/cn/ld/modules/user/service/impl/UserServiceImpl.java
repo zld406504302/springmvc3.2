@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService ,UserDetailsService{
 	@Autowired
 	UserRepository userRepository ;
 	
-	@Cacheable(value = "user" , condition="#name =='java小生1'" ,unless="#result.age == 24")
+	@Cacheable(value = "user" , condition="#name =='aaaa'" ,unless="#result.age == 24")
 	public User findByName(String name) {
 		return userRepository.getByName(name);
 	}

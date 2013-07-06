@@ -15,9 +15,8 @@
 			login-page="/login.jsp" 
 		    authentication-success-handler-ref="customerAuthenticationSuccessHandler"
 			always-use-default-target="true" 
+			default-target-url="/"
 		/>
-			<!-- default-target-url="/"  -->
-		
 		<logout logout-url="/logout" invalidate-session="true" success-handler-ref="logoutSuccessHandler"/>
 		
 	</http>
@@ -25,7 +24,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="java小生" password="111111" authorities="ROLE_USER, ROLE_ADMIN"/>
+				<user name="aaaa" password="111111" authorities="ROLE_USER, ROLE_ADMIN"/>
 			</user-service>
 		</authentication-provider>
 	    <authentication-provider user-service-ref="userServiceImpl" />

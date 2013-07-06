@@ -2,6 +2,8 @@ package com.cn.ld.modules.thymeleaf;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +21,9 @@ public class ThymeleafeControler extends BaseController {
 	private UserService userService;
 	
 	@RequestMapping("userList")
-	public String goSerchUserH() {
+	public String goSerchUserH(HttpServletResponse response) {
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
 		return "userList";
 	}
 	

@@ -14,7 +14,7 @@ public class UserRepository {
 
 	public UserRepository() {
 		for (int i = 0; i < 5; i++) {
-			this.userList.add(new User(i,"java小生"+i, "111111", 23 + 1, '男'));
+			this.userList.add(new User(i,"aaaa", "111111", 23 + 1, '男'));
 		}
 	}
 

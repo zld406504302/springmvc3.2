@@ -6,12 +6,12 @@
 <script type="text/javascript">
 $(function(){
 	$("#search").click(function(){
-		var id = $("input[name=name]").val();
-		if(isNull(id)){
+		var name = $("input[name=name]").val();
+		if(isNull(name)){
 			alert("pleas type userid between 0 and 5");
 			return ;
 		}
-		$.ajax({url:'${pageContext.request.contextPath}/user/findUserByName?name='+id,type:"POST",success:function(user){
+		$.ajax({url:'user/findUserByName?name='+name,type:"POST",success:function(user){
 			$("div#user").html("<span>username:"+user.name+"  age:"+user.age+"  sex:"+user.sex+"</span>");
 		}});
 	});
@@ -37,7 +37,6 @@ $(function(){
   <td th:text="${sb.sex}"></td>
 </tr>
 </table>
-<a href="thymeleafe/userList" th:text="#{user.list}">go userList</a>
 </div>
 </body>
 </html>

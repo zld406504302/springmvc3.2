@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title th:text="#{user.list}">Title</title>
 <script type="text/javascript">
 $(function(){
 	$("#search").click(function(){
@@ -14,12 +15,11 @@ $(function(){
 			$("div#user").html("<span>username:"+user.name+"  age:"+user.age+"  sex:"+user.sex+"</span>");
 		}});
 	});
-	
 });
 </script>
   </head>
 <body>
-<div><span>用户名称:</span><input name="name" value=""/><input type="button" id="search" value="查询用户"/></div>
+<div><span>用户名:</span><input name="name" value=""/><input type="button" id="search" value="查询"/></div>
 <div id="user">
 </div>
 <div id="userlist" >
@@ -37,6 +37,7 @@ $(function(){
   <td th:text="${sb.sex}"></td>
 </tr>
 </table>
+<a href="thymeleafe/userList" th:text="#{user.list}">go userList</a>
 </div>
 </body>
 </html>

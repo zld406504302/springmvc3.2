@@ -22,8 +22,6 @@ public class ThymeleafeControler extends BaseController {
 	
 	@RequestMapping("userList")
 	public String goSerchUserH(HttpServletResponse response) {
-		response.setContentType("text/html");
-		response.setCharacterEncoding("utf-8");
 		return "userList";
 	}
 	

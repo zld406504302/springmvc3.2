@@ -68,6 +68,7 @@
 		<property name="suffix" value=".html" />
 		<property name="templateMode" value="HTML5" />
 		<property name="cacheable" value="true" />
+		<!-- html静态内容编码  -->
 		<property name="characterEncoding" value="UTF-8"/>
 	</bean>
 
@@ -79,6 +80,8 @@
 		<property name="templateEngine" ref="templateEngine" />
 		<property name="order" value="1" />
 		<property name="viewNames" value="thymeleafe/*" />
+		<!-- 动态内容编码  -->
+		<property name="characterEncoding" value="utf-8" />
 	</bean> 
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/views/jsp/"

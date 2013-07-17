@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.cn.ld.modules.user.domain.User;
+import com.github.dandelion.datatables.core.ajax.DataSet;
+import com.github.dandelion.datatables.core.ajax.DatatablesCriterias;
 
 @Service
 public interface UserService {
@@ -15,4 +17,7 @@ public interface UserService {
 	public List<User> getUserList();
 	
 	public void removeUser(User u);
+	
+	public DataSet<User> findUsersByCriterias(DatatablesCriterias criterias);
+	
 }

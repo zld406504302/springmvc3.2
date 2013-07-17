@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 import com.cn.ld.modules.user.domain.User;
 import com.cn.ld.modules.user.repository.UserRepository;
 import com.cn.ld.modules.user.service.UserService;
+import com.github.dandelion.datatables.core.ajax.DataSet;
+import com.github.dandelion.datatables.core.ajax.DatatablesCriterias;
 
-@EnableCaching
+/*@EnableCaching*/
 @Service
 public class UserServiceImpl implements UserService ,UserDetailsService{
 	
@@ -48,4 +50,13 @@ public class UserServiceImpl implements UserService ,UserDetailsService{
 		u = this.userRepository.getByName(u.getName());
 		this.userRepository.removeUser(u);
 	}
+
+	@Override
+	public DataSet<User> findUsersByCriterias(DatatablesCriterias criterias) {
+		
+		DataSet<User> userSet= new DataSet<User>(this.getUserList(), 5L, 5L);
+		return userSet;
+	}
+
+
 }

@@ -4,12 +4,21 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.enterprise.inject.Model;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.cn.ld.base.domain.BaseLongIdDomain;
 
+/**   
+ * @filename: User   
+ * @description: TODO  
+ * @author lida  
+ * @date 2013-7-11 下午4:46:45
+ */
+@Model
 public class User extends BaseLongIdDomain implements UserDetails{
 
 	private static final long serialVersionUID = 1L;

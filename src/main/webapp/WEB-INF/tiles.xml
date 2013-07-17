@@ -8,6 +8,8 @@
         <put-attribute name="title" value="title" />
         <put-list-attribute name="stylesheets">
             <add-attribute value="static/style/main" />
+            <add-attribute value="static/style/datatables/jquery.dataTables" />
+            <add-attribute value="static/style/datatables/jquery.dataTables_themeroller" />
         </put-list-attribute>
         <put-list-attribute name="scripts">
             <add-attribute value="static/js/util" />
@@ -17,6 +19,7 @@
             <add-attribute value="static/js/jquery/validate/jquery.validate" />
             <add-attribute value="static/js/jquery/validate/messages_cn" />
             <add-attribute value="static/js/leftmenu" />
+            <add-attribute value="static/js/datatables/jquery.dataTables.min" />
         </put-list-attribute>
     </definition>
     

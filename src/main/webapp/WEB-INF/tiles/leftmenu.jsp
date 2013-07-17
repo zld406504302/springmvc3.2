@@ -11,9 +11,7 @@ $(function(){
 			$("ul#left_menu_ul li").eq(menuType).find("div[isTitle='false']").eq(index).click(function(){
 				var url = "${pageContext.request.contextPath}"+$menuLi.html() ;
 				
-				$("div#content").load(url,function(data){
-					$(this).html(decodeURI(data));
-				});
+				$("div#content").load(url);
 			});
 		});
 		
@@ -26,7 +24,6 @@ $(function(){
 <ul id="left_menu_ul">
 <li>
 <div class="show" isTitle="true"><span>spring annotation1</span></div>
-<div class="hide margin_left_20" isTitle="false"><span>spring cache-annotation</span></div>
 <div class="hide margin_left_20" isTitle="false"><span>spring thymeleafe</span></div>
 </li>
 <li>

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:dt="http://github.com/dandelion/datatables">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title th:text="#{user.list}">Title</title>
 <script type="text/javascript">
 $(function(){
-	$("#search").click(function(){
+	 $("#search").click(function(){
 		var name = $("input[name=name]").val();
 		if(isNull(name)){
 			alert("pleas type userid between 0 and 5");
@@ -15,9 +12,11 @@ $(function(){
 			$("div#user").html("<span>username:"+user.name+"  age:"+user.age+"  sex:"+user.sex+"</span>");
 		}});
 	});
+	 
+	 
 });
 </script>
-  </head>
+</head>
 <body>
 <div><span>用户名:</span><input name="name" value=""/><input type="button" id="search" value="查询"/></div>
 <div id="user">
@@ -36,6 +35,43 @@ $(function(){
   <td th:text="${sb.age}"></td>
   <td th:text="${sb.sex}"></td>
 </tr>
+</table>
+</div>
+
+
+<script>
+
+$(function(){
+	var oTable = $('#myTableId').dataTable( {
+		bJQueryUI: true,
+        bProcessing: true, 
+        bServerSide: false,
+		sAjaxSource: "user/queryUser",
+		sSearch:"aaa",
+		sEcho:1,
+		iDisplayStart:1,
+		iDisplayLength:10,
+		iColumns:$(this).eq(0).find("th").length,
+		iSortingCols:null,
+		aoColumns: [
+						{ "mData": "id" },
+						{ "mData": "name" },
+						{ "mData": "age" },
+						{ "mData": "sex" }
+					]
+	} );
+})
+</script>
+<div>
+<table  id="myTableId" dt:table="true" dt:url="@{user/queryUser}" dt:serverside="true" dt:processing="true">
+   <thead>
+      <tr>
+         <th dt:property="'id'">编号</th>
+         <th dt:property="'name'">姓名</th>
+         <th dt:property="'age'">年龄</th>
+         <th dt:property="'sex'">性别</th>
+      </tr>
+   </thead>
 </table>
 </div>
 </body>

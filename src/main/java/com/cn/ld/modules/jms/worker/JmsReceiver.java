@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
 
+import com.cn.ld.modules.annotation.MethodMonitorCount;
 import com.cn.ld.modules.jms.handler.MessageHandler;
 
 public class JmsReceiver implements MessageHandler {
@@ -26,7 +27,8 @@ public class JmsReceiver implements MessageHandler {
 			e.printStackTrace();
 		}
 	}
-
+	
+	@MethodMonitorCount(10000)
 	@Override
 	public void handleMessage(String message) {
 		/*

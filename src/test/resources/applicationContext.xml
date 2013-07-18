@@ -83,7 +83,7 @@
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
-	<!-- spring task executor thread pool, ychen, 2012-11-10 -->
+	<!-- spring task executor thread pool-->
 	<bean id="taskExecutor"
 		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
 		<!-- 核心线程数，默认为1 -->

@@ -17,7 +17,7 @@
 		class="com.cn.ld.modules.jms.monitor.JmsMessageHanderMonitor">
 		<property name="useDynamicLogger" value="false" />
 		<constructor-arg index="0">
-			<value>asyntopic</value>
+			<value>1</value>
 		</constructor-arg>
 	</bean>
 

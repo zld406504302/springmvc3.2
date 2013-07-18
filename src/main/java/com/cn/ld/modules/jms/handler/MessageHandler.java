@@ -5,9 +5,12 @@ import java.util.Map;
 
 import javax.jms.TextMessage;
 
+import com.cn.ld.modules.annotation.MethodMonitorCount;
+
 public interface MessageHandler {
 	void receive(TextMessage message);
-
+	
+	@MethodMonitorCount(10000)
 	void handleMessage(String message);
 
 	void handleMessage(Map<String, Object> message);

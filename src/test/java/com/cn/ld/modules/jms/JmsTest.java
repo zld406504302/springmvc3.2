@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cn.ld.modules.jms.monitor.JmsMessageHanderMonitor;
 import com.cn.ld.modules.jms.worker.JmsSender;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,13 +21,10 @@ public class JmsTest {
 	protected final Logger logger = Logger.getLogger(this.getClass());
 
 	@Autowired
-	private JmsMessageHanderMonitor jmsMessageHanderMonitor;
-
-	@Autowired
 	private JmsSender jmsSender;
 
 	private String destination;
-	private int no = 1 * 10000;
+	private int no = 10* 10000;
 	private String message;
 
 	@Before
@@ -38,15 +34,14 @@ public class JmsTest {
 				+ "message.txt";
 		message = FileUtil.readAsString(new File(filePath));
 		this.destination = "asyncTopic";
-		this.jmsSender.setDestination(new ActiveMQTopic(this.destination));
-		this.jmsMessageHanderMonitor.setMaxReceNo(no);
-		this.jmsMessageHanderMonitor.setDestnationName(this.destination);
+		this.jmsSender.setSendAsync(true);
 	}
 
 	@Test
 	public void send() throws InterruptedException {
+		ActiveMQTopic dest = new ActiveMQTopic(this.destination);
 		for (int i = 0; i < no; i++) {
-			jmsSender.sendSingle(message);
+			jmsSender.sendSingle(message, dest);
 		}
 		Thread.sleep(1000000000);
 	}

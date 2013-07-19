@@ -1,7 +1,6 @@
 
 <div>
 <ul contextmenu="0" >
-<li>/user/userList</li>
 <li>/thymeleafe/userList</li>
 </ul>
 <ul contextmenu="1" >

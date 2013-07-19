@@ -116,4 +116,47 @@
 	    </set>
 	    </property>
     </bean> -->
+
+
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL" value="tcp://127.0.0.1:61616" />  
+           		<property name="closeTimeout" value="60000" /> 
+				<property name="userName" value="admin"/>
+				<property name="password" value="admin"/>
+			</bean>
+		</property>
+	</bean>   
+
+	<!-- Spring JMS Template -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory">
+			<ref local="jmsConnectionFactory" />
+		</property>
+	</bean>
+
+	<!-- <bean id="broker" class="org.apache.activemq.xbean.BrokerFactoryBean">
+		<property name="config" value="/WEB-INF/activemq.xml" />
+		<property name="start" value="true" />
+	</bean> -->
+    <bean id="asyncDestination" name="asyncDestination" class="org.apache.activemq.command.ActiveMQQueue">  
+         <constructor-arg index="0">  
+         <value>asyncmessage</value>  
+         </constructor-arg>  
+    </bean>  
+    
+    <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="jmsConnectionFactory"/>
+		<property name="destination" ref="asyncDestination"/>
+		<property name="messageListener" ref="messageListener"/>
+		<property name="sessionTransacted" value="false"/>
+	</bean>
+
+	<bean id="messageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+		<constructor-arg>
+			<bean class="com.cn.ld.modules.jms.handler.impl.MessageHandlerImpl" />
+		</constructor-arg>
+    </bean>  
+    
 </beans>

@@ -9,10 +9,11 @@
 	
 	<http pattern="/static/**" security="none" />
 	<http pattern="/login.jsp*" security="none" />
+	<http pattern="/login.html*" security="none" />
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_USER" />
 		<form-login 
-			login-page="/login.jsp" 
+			login-page="/login.html" 
 		    authentication-success-handler-ref="customerAuthenticationSuccessHandler"
 			always-use-default-target="true" 
 			default-target-url="/"

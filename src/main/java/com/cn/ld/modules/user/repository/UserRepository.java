@@ -13,7 +13,7 @@ public class UserRepository {
 	private List<User> userList = new ArrayList<User>();
 
 	public UserRepository() {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 15; i++) {
 			this.userList.add(new User(i,"aaaa", "111111", 23 + 1, '男'));
 		}
 	}

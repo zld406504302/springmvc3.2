@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.cn.ld.base.web.DataTableResult;
 import com.cn.ld.modules.user.domain.User;
 import com.cn.ld.modules.user.repository.UserRepository;
 import com.cn.ld.modules.user.service.UserService;
@@ -52,9 +53,10 @@ public class UserServiceImpl implements UserService ,UserDetailsService{
 	}
 
 	@Override
-	public DataSet<User> findUsersByCriterias(DatatablesCriterias criterias) {
+	public DataTableResult<User> findUsersByCriterias() {
 		
-		DataSet<User> userSet= new DataSet<User>(this.getUserList(), 5L, 5L);
+		DataTableResult<User> userSet = new DataTableResult<User>();
+		userSet.setAaData(this.getUserList());
 		return userSet;
 	}
 

@@ -12,8 +12,6 @@ $(function(){
 			$("div#user").html("<span>username:"+user.name+"  age:"+user.age+"  sex:"+user.sex+"</span>");
 		}});
 	});
-	 
-	 
 });
 </script>
 </head>
@@ -38,27 +36,47 @@ $(function(){
 </table>
 </div>
 
-
 <script>
 
 $(function(){
+	/* private String search;
+	private Integer displayStart;
+	private Integer displaySize;
+	private List columnDefs;
+	private List sortingColumnDefs;
+	private Integer internalCounter; */
+	
 	var oTable = $('#myTableId').dataTable( {
-		bJQueryUI: true,
-        bProcessing: true, 
-        bServerSide: false,
+		bProcessing: true,
+        bServerSide: true,
 		sAjaxSource: "user/queryUser",
-		sSearch:"aaa",
-		sEcho:1,
-		iDisplayStart:1,
-		iDisplayLength:10,
-		iColumns:$(this).eq(0).find("th").length,
-		iSortingCols:null,
 		aoColumns: [
 						{ "mData": "id" },
 						{ "mData": "name" },
 						{ "mData": "age" },
 						{ "mData": "sex" }
-					]
+					] /* ,
+		"fnServerData": function ( sSource, aoData, fnCallback ) {
+			   var param = new Object();
+			   param.sEcho = 1 ;
+			   param.iColumns = 4 ;
+			   param.iDisplayStart = 0 ;
+			   param.iDisplayLength = 10 ;
+			   param.sSearch = "";
+			   param.iSortingCols=1;
+			   param.
+               $.ajax( {
+                   dataType: 'json',
+                   contentType: "application/json;charset=UTF-8",
+                   type: 'POST',
+                   url: sSource,
+                   data: param,
+                   success: fnCallback,
+                   error : function (e) {
+                       alert (e);
+                   }
+               } ); 
+        } */
 	} );
 })
 </script>
@@ -66,13 +84,19 @@ $(function(){
 <table  id="myTableId" dt:table="true" dt:url="@{user/queryUser}" dt:serverside="true" dt:processing="true">
    <thead>
       <tr>
-         <th dt:property="'id'">编号</th>
-         <th dt:property="'name'">姓名</th>
-         <th dt:property="'age'">年龄</th>
-         <th dt:property="'sex'">性别</th>
+         <th id="id">编号</th>
+         <th id="name">姓名</th>
+         <th id="age">年龄</th>
+         <th id="sex">性别</th>
       </tr>
    </thead>
 </table>
 </div>
 </body>
+
+<datatables:table data="${allUsers}" id="dataTable"  theme="bootstrap2" export="pdf">
+ <datatables:column title="name" property="name" sortable="true" />
+ <datatables:column title="age" property="age" sortable="true" />
+ <datatables:column title="sex" property="sex" sortable="true" />
+</datatables:table>
 </html>
